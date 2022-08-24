@@ -1,0 +1,37 @@
+<body onload="popCombo(0)">
+
+
+    <select size='1' onchange='popCombo(this.selectedIndex)'>
+        <option>Sun</option>
+        <option>Mon</option>
+        <option>Tue</option>
+        <option>Wed</option>
+        <option>Thu</option>
+        <option>Fri</option>
+        <option>Sat</option>
+    </select>	
+    
+    <select size='1'  id='weekDays'> 	
+        <option> Loading, please wait.</option>	
+    </select>	
+    
+    
+    
+    <script type='text/javascript'>
+    
+    function el(tid) {return document.getElementById(tid);}
+    
+    function popCombo(weekDayToUse) {
+        var wd = el("weekDays").options;
+        wd.length = 0;
+        var td = new Date;
+        td.setDate((td.getDate() - td.getDay()) + weekDayToUse);
+        for (var i = 0; i < 10; i++) {
+            wd[i] = new Option(td.toLocaleDateString());
+            td.setTime(td.getTime() + 604800000);
+        }
+    }
+    
+    
+    </script>	
+    </body>	

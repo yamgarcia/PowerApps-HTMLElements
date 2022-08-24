@@ -1,0 +1,88 @@
+<html>
+  <script src="./trr_createschedule.js" type="text/javascript"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+    crossorigin="anonymous"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"
+  ></script>
+  <script src="ClientGlobalContext.js.aspx" type="text/javascript"></script>
+  <!-- <script>
+    function day_of_week() {
+      const openhour = document.querySelector("#openhour");
+      const closehour = document.querySelector("#closehour");
+      var data = {
+        crf93_weekday: document.getElementById("weekday").value,
+        crf93_openinghour: openhour.value,
+        crf93_closinghour: closehour.value,
+      };
+      console.log(data);
+    }
+  </script> -->
+
+  <div class="container">
+    <div>
+      <label for="weekday">Opening hours</label>
+
+      <select class="m-1" size="1" id="weekday" name="weekday">
+        <option value="1">Sunday</option>
+        <option selected value="2">Monday</option>
+        <option value="3">Tuesday</option>
+        <option value="4">Wednesday</option>
+        <option value="5">Thursday</option>
+        <option value="6">Friday</option>
+        <option value="7">Saturday</option>
+      </select>
+    </div>
+
+    <br />
+    <div>
+      <label for="openhour">Opening hours</label>
+      <input
+        class="m-1"
+        type="time"
+        id="openhour"
+        name="openhour"
+        min="01:00"
+        required
+      />
+    </div>
+
+    <br />
+    <div>
+      <label for="closehour">Closing hours</label>
+      <input
+        class="m-1"
+        type="time"
+        id="closehour"
+        name="closehour"
+        min="01:00"
+        required
+      />
+    </div>
+
+    <br />
+
+    <button
+      class="btn btn-success m-1"
+      type="button"
+      title="Create a schedule using your input"
+      onclick="Schedule.onWorkdayCreate()"
+    >
+      Create Workday
+    </button>
+    <button
+      class="btn btn-secondary m-1"
+      type="button"
+      title="Auto create a schedule for each week day"
+      onclick="Schedule.onScheduleCreate()"
+    >
+      Create Default Schedule
+    </button>
+  </div>
+</html>

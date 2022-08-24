@@ -1,0 +1,23 @@
+<script>
+  function day_of_week() {
+    var weekday = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    var d = document.getElementById("date_input").valueAsDate;
+    var n = d.getUTCDay();
+    document.getElementById("output").innerHTML = weekday[n];
+  }
+</script>
+
+<form>
+  <input type="date" placeholder="dd:mm:yy" id="date_input" />
+  <input type="button" value="Get Weekday" onclick="day_of_week()" />
+</form>
+<p id="output"></p>
