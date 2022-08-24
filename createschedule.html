@@ -12,18 +12,20 @@
     crossorigin="anonymous"
   ></script>
   <script src="ClientGlobalContext.js.aspx" type="text/javascript"></script>
-  <!-- <script>
+  <script>
     function day_of_week() {
       const openhour = document.querySelector("#openhour");
       const closehour = document.querySelector("#closehour");
+
       var data = {
         crf93_weekday: document.getElementById("weekday").value,
         crf93_openinghour: openhour.value,
         crf93_closinghour: closehour.value,
       };
+
       console.log(data);
     }
-  </script> -->
+  </script>
 
   <div class="container">
     <div>
@@ -72,7 +74,7 @@
       class="btn btn-success m-1"
       type="button"
       title="Create a schedule using your input"
-      onclick="Schedule.onWorkdayCreate()"
+      onclick="day_of_week()"
     >
       Create Workday
     </button>
